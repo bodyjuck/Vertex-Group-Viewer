@@ -22,7 +22,8 @@ class DSKJAL_PT_VGV(bpy.types.Panel):
 
     @classmethod
     def poll(self, context):
-        return context.object and context.object.type == 'MESH'
+        o = context.object
+        return o and o.type == 'MESH' and o.mode == 'EDIT'
 
     def draw(self, context):
         ob = context.object
