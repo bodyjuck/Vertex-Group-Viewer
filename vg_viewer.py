@@ -33,18 +33,20 @@ class DSKJAL_PT_VGV(bpy.types.Panel):
         ob = context.object
 
         if ob.type == 'MESH' and ob.mode == 'EDIT':
-            vgs = []
             num_vg = len(ob.vertex_groups)
+            flg = [False] * num_vg
             bm = bmesh.from_edit_mesh(ob.data)
 
             vg_layer = bm.verts.layers.deform.active
             selected = [v for v in bm.verts if v.select]
             for v in selected:
-                layers = [i for i in range(num_vg) if i in v[vg_layer]]
-                vgs.extend(layers)
+                vgs = [i for i in range(num_vg) if i in v[vg_layer]]
+                for i in vgs:
+                    flg[i] = True
 
-            for vg in set(vgs):
-                self.layout.label(text=ob.vertex_groups[vg].name)
+            for i in range(num_vg):
+                if flg[i]:
+                    self.layout.label(text=ob.vertex_groups[i].name)
 
 def register():
     bpy.utils.register_class(DSKJAL_PT_VGV)
