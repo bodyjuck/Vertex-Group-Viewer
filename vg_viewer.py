@@ -1,3 +1,7 @@
+# Copyright (c) 2019 dskjal
+#
+# This software is released under the MIT License.
+# http://opensource.org/licenses/mit-license.php
 import bpy
 import bmesh
 
