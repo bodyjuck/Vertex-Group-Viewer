@@ -44,7 +44,7 @@ class DSKJAL_PT_VGV(bpy.types.Panel):
                 vgs.extend(layers)
 
             for vg in set(vgs):
-                self.layout.label(text=str(ob.vertex_groups[vg].name))
+                self.layout.label(text=ob.vertex_groups[vg].name)
 
 def register():
     bpy.utils.register_class(DSKJAL_PT_VGV)
