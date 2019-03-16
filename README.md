@@ -1,2 +1,2 @@
-# Vertex-Group-Viewer
+# Vertex Group Viewer
 Display vertex groups of selected vertices
