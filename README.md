@@ -1,4 +1,6 @@
 # Vertex Group Viewer
+
+選択された頂点の頂点グループ名を表示する。  
 Display vertex groups of selected vertices. 
 
 対象の Blender バージョンは 2.80。しかし 2.79 でも動作するはず。  
